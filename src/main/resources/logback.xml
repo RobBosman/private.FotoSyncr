@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+  <!-- suppress printing logback status -->
+  <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+  <!-- define STDOUT as console output -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <logger name="nl.bransom" level="DEBUG" additivity="false">
+    <appender-ref ref="STDOUT"/>
+  </logger>
+
+  <!-- set default log level and appender -->
+  <root level="ERROR">
+    <appender-ref ref="STDOUT"/>
+  </root>
+
+</configuration>
